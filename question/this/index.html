@@ -8,6 +8,26 @@
     <script src="./index.js"></script>
 </head>
 <body>
-    
+    <!-- 匿名函数自执行：this指向window -->
+    <div id='box' onclick="(function(){console.log(this)}())">
+        div
+    </div>
+
+    <script>
+        // 事件处理函数中的this
+        var box = document.getElementById('box')
+        // box.onclick = function(){
+        //     this.style.backgroundColor = 'bisque'
+        // }
+        // box.onclick = function(){
+        //     // 事件处理函数中的this，该事件由谁触发，this指的就是谁
+        //     console.log(this);
+            
+        //     setTimeout(function(){
+        //         console.log(this) //window
+        //         this.style.backgroundColor = 'bisque'
+        //     },1000)
+        // }
+    </script>
 </body>
 </html>
