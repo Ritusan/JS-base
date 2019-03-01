@@ -110,59 +110,59 @@ obj.fn5()  //2
 
 //--------------------------------------------------------------------
 // 多层嵌套
-var b = 10
-var bobj = {
-    b: 20,
-    bo: {
-        b: 30,
-        fn: function(){
-            console.log(this.b)
-        }
-    }
-}
-bobj.bo.fn()  //30
-var temp = bobj.bo.fn
-temp()  //10
+// var b = 10
+// var bobj = {
+//     b: 20,
+//     bo: {
+//         b: 30,
+//         fn: function(){
+//             console.log(this.b)
+//         }
+//     }
+// }
+// bobj.bo.fn()  //30
+// var temp = bobj.bo.fn
+// temp()  //10
 
 //--------------------------------------------------------------------
 // 构造函数
-function Fn(){
-    this.a = 100
-    // return 1  //返回非null的对象，那么实例化结果就是返回出的对象
-    return {}
-}
-var f = new Fn()  //new构造器执行完之后返回的是一个对象，实例化（类似于生娃的过程，构造器类似于parent）
+// function Fn(){
+//     this.a = 100
+//     // return 1  //返回非null的对象，那么实例化结果就是返回出的对象
+//     return {}
+// }
+// var f = new Fn()  //new构造器执行完之后返回的是一个对象，实例化（类似于生娃的过程，构造器类似于parent）
 // console.log(f)
 
 //--------------------------------------------------------------------
 // 原型链上的函数
-var p = {
-    a: 1000,
-    fn: function(){
-        console.log(this.a)
-    }
-}
-var r = Object.create(p)
-console.log(r.__proto__)
-r.fn()
+// var p = {
+//     a: 1000,
+//     fn: function(){
+//         console.log(this.a)
+//     }
+// }
+// var r = Object.create(p)
+// console.log(r.__proto__)
+// r.fn()
 
 //--------------------------------------------------------------------
 // getter和setter
-var test = {
-    m: 1,
-    n: 2,
-    get sum(){
-        console.log('正在尝试访问  sum')
-        return this.m+this.n
-    },
-    set sum(val){
-        console.log('正在尝试设置  sum')
-        this.m = val/2
-        this.n = val/2
-    }
-}
-console.log(test.sum)
-test.sum = 10
-console.log(test.m)
-console.log(test.n)
-console.log(test.sum)
+// var test = {
+//     m: 1,
+//     n: 2,
+//     get sum(){
+//         console.log('正在尝试访问  sum')
+//         return this.m+this.n
+//     },
+//     set sum(val){
+//         console.log('正在尝试设置  sum')
+//         this.m = val/2
+//         this.n = val/2
+//     }
+// }
+// console.log(test.sum)
+// test.sum = 10
+// console.log(test.m)
+// console.log(test.n)
+// console.log(test.sum)
