@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="checkbox" name="fun">弹琴
+    <input type="checkbox" name="fun">旅行
+    <input type="checkbox" name="fun">写作
+    <input type="checkbox">全选
+
+    <script>
+        // console.log(funs)
+        // 伪数组：和数组长得很像，但是不具备数组下的方法
+
+        // 伪数组如何得到：arguments，获取元素
+        // 如何判断是否是伪数组：调用数组下面的方法，没有的话就说明是类数组
+        // arr.push
+        // arr.pop
+        // Array.isArray(arr)
+
+        // 如何将伪数组转化为标准数组
+        // for循环
+        // Array.from
+        // Array.slice.call()
+        // 扩展运算符...
+
+        var funs = document.querySelectorAll("input[name='fun']")
+        // var arr = []
+        // for(var i=0;i<funs.length;i++){
+        //     arr.push(funs[i])
+        // }
+        // console.log(arr)
+
+        // var arr = Array.from(funs)
+        // console.log(arr)
+
+        // 扩展运算符：以参数的形式进行扩展
+        // var arr = [...funs]  //等同于：arr2 = [funs[0],funs[1],funs[2]]
+        // console.log(arr)
+
+        // call：调用一个对象的一个方法，用另一个对象替换当前对象
+        // 例子：B.fn.call(A) : A对象调用B对象的方法(使A具备了B的方法)
+        var arr = Array.prototype.slice.call(funs)
+        console.log(arr) 
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr = [10,20,30]    
+        var num = 0  //存储叠加起来的值
+        var num1 = 0
+        var num2 = 0
+        var num3 = 0
+        var num4 = 0
+        var num5 = 0
+        for(var i = 0;i<arr.length;i++){
+            num += arr[i]
+        }
+        // 循环每一项
+        arr.forEach((item)=>{
+            num1 += item
+        })
+        // 映射，复制出来的数组
+        arr.map((item)=>{
+            num2 += item
+        })
+        // 过滤，筛选
+        arr.filter((item)=>{
+            num3 += item
+        })
+        // 只要其中一项符合条件，就返回true
+        arr.some((item)=>{
+            num4 += item
+        })
+        // 全部符合才返回true
+        arr.every((item)=>{
+            return num5 += item
+        })
+        console.log(num1,num2,num3,num4,num5)
+        // 虽然都带有循环功能，但会用在不一样的用途上面
+    </script>
+</body>
+</html>
