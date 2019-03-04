@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 利用递归实现深拷贝：一层一层地查找数据，直到不满足条件进行返回
+        var stu = {
+            name: 'lin',
+            adress: {
+                adress1: 'beijing',
+                adress2: 'shanghai',
+                adress3: 'guangzhou',
+            },
+            funs: ['a','b','c'],
+            fun: function(){
+
+            }
+        }
+
+        function copy(obj){
+            var vv = obj instanceof Array? []:{}
+            for(var v in obj){
+                if(typeof obj[v] == 'object'){
+                    vv[v] = copy(obj[v])
+                }else {
+                    vv[v] = obj[v]
+                }
+            }
+            return vv
+        }
+        var obj = copy(stu)
+        stu.name = 'zhang'
+        stu.adress.adress1 = 'hangzhou'
+        console.log(obj)
+    </script>
+</body>
+</html>

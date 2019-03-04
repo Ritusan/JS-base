@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 题目：实现一个函数clone，可以对JavaScript的5种主要的数据类型（
+        // Number，String，Object，Array，Boolean）  进行值复制
+
+        // 数据类型分两大类：基本类型+引用类型
+        // 基本类型：String，Number，Boolean，Null，Undefined，Symbol
+        // 引用类型：Object
+
+        var a = 'why'
+        var b = 123
+        var c = null
+        var d = true
+        var e = undefined
+        var f = Symbol('why')
+
+        var aa = a
+        var bb = b
+        var cc = c
+        var dd = d
+        var ee = e
+        var ff = f
+        console.log(aa,bb,cc,dd,ee,ff)
+
+        // 赋值，赋址
+        // 赋值：基本类型的数据拷贝，会重新开辟一个空间存放拷贝的值
+        // 赋址：复杂类型中的拷贝，拷贝下来的只是一个指向存放数据空间的指针
+            // 因为指向的是同一个地址，所以当地址中的数据发生改变时，指向该存放地址的所有变量都会发生改变
+        // Object.assign(target,...sources):用于将属性的值从一个或多个源对象复制到目标对象，它将返回目标对象
+
+        var arr = [10,20,30]
+        // var arr1 = arr
+        var arr1 = [...arr]
+        var arr2 = arr.concat()
+        arr[0] = 'wjk'
+        console.log(arr,arr1,arr2)
+
+    </script>
+</body>
+</html>

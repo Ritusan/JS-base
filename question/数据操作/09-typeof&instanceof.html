@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // typeof: 
+        // 语法：typeof 检测对象(可以是任意类型的)
+        // 返回值：String|'number','undefined','string','boolean','function','object'
+        // null,Array,Regexp等都会返回Object
+        var b = 123
+        var c = null
+        var d = true
+        var e = undefined
+        var f = Symbol('why')
+        var arr = []
+        var obj = {}
+        // console.log(typeof a)
+        // console.log(typeof b)
+        // console.log(typeof c)
+        // console.log(typeof d)
+        // console.log(typeof e)
+        // console.log(typeof f)
+        // console.log(typeof arr)
+        // console.log(typeof obj)
+
+        // instanceof：
+        // 语法：object(检测对象) instanceof constructor(构造函数)
+        // 返回值：Boolean
+        // 用途：检测constructor.prototype是否存在在object的原型链上，对于未知的类型无法判断
+        var a = 'why'
+        console.log(arr instanceof Array)
+        console.log(obj instanceof Object)
+
+        // 更多检测数据的方法：
+        // isArray：判断是否是一个数组
+        // Object.prototype.toString.call(obj(obj).slice(8,-1))
+        // obj.constructor == Array
+    </script>
+</body>
+</html>

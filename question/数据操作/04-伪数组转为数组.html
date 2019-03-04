@@ -44,6 +44,7 @@
 
         // call：调用一个对象的一个方法，用另一个对象替换当前对象
         // 例子：B.fn.call(A) : A对象调用B对象的方法(使A具备了B的方法)
+        // 使伪数组包含slice方法
         var arr = Array.prototype.slice.call(funs)
         console.log(arr) 
     </script>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="checkbox" name="fun" checked>弹琴
+    <input type="checkbox" name="fun" checked>旅行
+    <input type="checkbox" name="fun">写作
+    <input id="allcheck" type="checkbox">全选
+    <button disabled>提交</button>
+
+    <script>
+        var funs = document.querySelectorAll("input[name='fun']")
+        var allcheck = document.querySelector('#allcheck')
+        var btn = document.querySelector('button')
+        check()
+        for(var i=0;i<funs.length;i++){
+            funs[i].onclick = function(){
+                check()
+            }
+        }
+        function check(){
+            allcheck.checked = [...funs].every(item=>{
+                return item.checked
+            })
+            btn.disabled = ![...funs].some(item=>{
+                return item.checked
+            })
+        } 
+        console.log(allcheck.checked)
+    </script>
+</body>
+
+</html>

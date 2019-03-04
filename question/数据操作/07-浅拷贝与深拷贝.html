@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var stu = {
+            name: 'lin',
+            adress: {
+                adress1: 'beijing',
+                adress2: 'shanghai',
+                adress3: 'guangzhou',
+            }
+        }
+
+        // Object.assign(target,...sources)
+        // target:目标对象
+        // ...sources: 原对象
+        // 以target目标对象为基础，把原对象扩展到目标对象身上
+        // assign: 会改变目标对象
+        var a = {
+            a: 1
+        }
+        var b = {
+            b: 2
+        }
+        var c = {
+            c: 3
+        }
+        var d = Object.assign({},a,b,c)
+        // console.log(d)
+
+        // var obj = Object.assign({},stu)
+        // stu.name = 'zhang'
+        // stu.adress.adress1 = 'hangzhou'
+        // console.log(obj)
+
+        // 浅拷贝：只是将数据中存放的引用拷贝下来，依旧指向同一个存放地址
+        // 深拷贝：将数据中所有的数据拷贝下来，而不是引用，拷贝下来的数据的修改，不会影响原数据
+        // 深拷贝的实现：
+        // var obj2 = JSON.parse(JSON.stringify(obj))
+        // 以上方式，当数据中存在function等内容时，无法拷贝
+        // JSON.stringify(): 转字符串，是基本类型，在存储时会单独开辟空间
+        // JSON.parse()：转对象，这中间就断掉了和原始数据的关系（转的时候不包含undefined和function）
+        // 如果想拷贝function，就要用到递归
+
+        var obj = JSON.parse(JSON.stringify(stu))
+        stu.name = 'zhang'
+        stu.adress.adress1 = 'hangzhou'
+        console.log(obj)
+    </script>
+</body>
+</html>
