@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        ul {
+            list-style: none;
+        }
+        li {
+            display: inline-block;
+            width: 100px;
+            height: 60px;
+            background: #ccc;
+        }
+        li.active {
+            background: yellow;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li class="active"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+
+    <script>
+        // for循环使用，if语句使用，数组，鼠标事件onmouseover,onmouseout
+        // 鼠标移入，鼠标移出，鼠标点击
+        // 鼠标移入和移出时，设置对应li的class（哪些li是添加active，哪些是删除active）
+
+        var lis = document.querySelectorAll('li')
+        var n =3  //当前分数
+        for(var i=0;i<lis.length;i++){
+            lis[i].onmouseover = function(){
+                lis[i].index = i
+                // 把li的第0个到鼠标移入的这个的li的class设置成active
+                for(var i=0;i<lis.length;i++){
+                    if(i<=this.index){
+                        lis[i].classList.add('active')
+                    }else {
+                        lis[i].classList.remove('active')
+                    }
+                }
+            }
+            lis[i].onmouseout = function(){
+                for(var i=0;i<lis.length;i++){
+                    if(i<=n){
+                        lis[i].classList.add('active')
+                    }else {
+                        lis[i].classList.remove('active')
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

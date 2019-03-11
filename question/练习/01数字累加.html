@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 找出数组中所有的数字，并把结果进行累加 -->
+    <script>
+        var arr = ['m','',1,NaN,20,3,'20px',56,18,Infinity]
+        var result = 0
+        // NaN:number类型
+        // 空字符串会转成数字
+        // Infinity:number
+        // Number.isFinite(1) true
+        // Number.isFinite(Infinity) false
+        // Number.isFinite(NaN) false
+        // Number.isFinite('') false
+
+        // for(var i=0;i<arr.length;i++){
+        //     if(Number.isFinite(arr[i])){
+        //         result += arr[i]
+        //     }
+        // }
+        arr.forEach(item=>{
+            if(Number.isFinite(item)){
+                result += item
+            }
+        })
+        console.log(result)
+    </script>
+</body>
+</html>
