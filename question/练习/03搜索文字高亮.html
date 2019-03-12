@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        span {
+            color: orange;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text">
+    <input type="button" value="查找">
+
+    <p>当你看尽了欧洲重镇的富丽堂皇、熙熙攘攘，</br>
+        欧洲，不妨来听听这些常人所不道的大城小镇故事——欧洲从多瑙河的静谧到欧洲地中海缠绵多情的叹息，
+        </br>小城杂糅着不同国家、历史、欧洲宗教和风土人情，欧洲太值得回味值得咀嚼。</p>
+    
+    <script>
+        var aInp = document.getElementsByTagName('input')
+        var oP = document.getElementsByTagName('p')[0]
+        // 搜索高亮
+        aInp[1].onclick = function () {
+            var str = aInp[0].value
+            if (!str) {
+                return
+            }
+            oP.innerHTML = oP.innerHTML.split(str).join('<span>' + str + '</span>')
+        }
+    </script>
+</body>
+
+</html>

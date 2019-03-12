@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var str = '印记中文-WWW.docschina.org'
+
+        // 根据子字符串下标返回当前字符串
+        str.charAt(1) 
+        // 根据子字符串下标返回当前字符串在计算机中的字符编码
+        str.charCodeAt(2)
+        // 静态方法，根据编码值，返回想要的字符串
+        // String.fromCharCode()
+
+        // 查找，找到d所对应的下标，第二个参数是可选的，表示从第几位开始查找
+        str.indexOf('d',3)
+        // 从后往前找，
+        str.lastIndexOf('i')
+        
+        // 字符串比较，第一位拿出来与2比较，如果第一位比2小，那么后面加再多0也没用。字符串是一位一位进行比较
+        '1000'<'2' //true
+        // 字符串和数字比较，比较数值大小
+        '1000'>2  //true
+
+        // 截取，从0到4，不包含4
+        str.substring(0,4)
+        // 负数会往回走，倒数
+        str.slice(-3)
+
+        // 转换大写，汉字和符号会忽略掉，只针对英文，用在判断里面比较多
+        str.toUpperCase()
+        // 转换小写
+        str.toLowerCase()
+
+        // 切割，以.切割，把一个字符串切割成数组，只要数组的前两个
+        str.split('.',2)
+
+        var arr = ['www','docschina','org']
+        // 数组方法，把数组里的东西拼成一个字符串，以引号里的东西连接在一起
+        arr.join('.')
+    </script>
+</body>
+</html>

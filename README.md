@@ -1,2 +1,1 @@
-# JS-interview-demo
-收集JS相关的面试题
+# JS基础知识整理
