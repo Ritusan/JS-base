@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 创建数组
+        var fruits = ['Apple','Banana']
+        console.log(fruits.length)
+
+        // 通过索引访问数组元素
+        var first = fruits[0]
+        console.log(first)
+        var last = fruits[fruits.length-1]
+        console.log(last)
+        
+        // 遍历数组
+        fruits.forEach((item,index,array)=>{
+            console.log(item,index,array)
+        })
+
+        // 添加元素到数组末尾
+        var addLast = fruits.push('Orange')
+        console.log(addLast,fruits)
+
+        // 删除数组末尾元素
+        var rmLast = fruits.pop()
+        console.log(rmLast,fruits)
+
+        // 删除数组头部元素
+        var rmFirst = fruits.shift()
+        console.log(rmFirst,fruits)
+
+        // 添加元素到数组头部
+        var addFirst = fruits.unshift('Strawberry')
+        console.log(addFirst,fruits)
+
+        // 找出某个元素在数组中的索引
+        fruits.push('Mongo')
+        console.log(fruits)
+        var pos = fruits.indexOf('Banana')
+        console.log(pos)
+
+        // 通过索引删除某个元素
+        var rmItem = fruits.splice(pos,1)
+        console.log(rmItem,fruits)
+
+        // 从一个索引位置删除多个元素
+        var vegetables = ['Cabbage','Turnip','Radish','Carrot']
+        console.log(vegetables)
+        var rmItems = vegetables.splice(1,2)
+        console.log(rmItems,vegetables)
+
+        // 复制一个数组
+        var shallowCopy = fruits.slice()
+        console.log(shallowCopy)
+        console.log(Object.keys(shallowCopy))
+
+        // 正则匹配结果所返回的数组
+        // RegExp.exec
+        // String.match
+        // String.replace
+    </script>
+</body>
+</html>
